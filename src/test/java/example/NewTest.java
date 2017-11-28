@@ -27,7 +27,7 @@ public class NewTest {
     	WebDriver driver ;
     	System.setProperty("webdriver.firefox.marionette","geckodriver");
     	driver = new FirefoxDriver();
-        String baseUrl = "http://dvps-fd-vm13688.cloudapp.net:8090/";
+        String baseUrl = "http://fd-dvops-vm-01.eastus.cloudapp.azure.com:50000/hello-world-war-1.0.0/";
         String expectedTitle = "License - Liferay DXP";
         String actualTitle = "";
 
