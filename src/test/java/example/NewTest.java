@@ -1,34 +1,33 @@
 package example;		
 
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;		
-import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;		
+	
 import org.testng.annotations.Test;	
-import org.testng.annotations.BeforeTest;	
-import org.testng.annotations.AfterTest;		
-import java.io.BufferedWriter;                  
-import java.io.File;                          
-import java.io.FileWriter;                             
-import java.util.concurrent.TimeUnit;                    
-import java.io.IOException;
+//import org.testng.Assert;
                        
-import org.openqa.selenium.Cookie;                     
+//import org.openqa.selenium.Cookie;                     
 
-public class NewTest {		
-    
-    @Test
+public class NewTest {			
+	
+	public static String driverPath = "C:\\Users\\SGARG5\\Downloads\\";
+	 public static WebDriver driver;
+	
+	 @Test()
     public static void main(String[] args) {
         // declaration and instantiation of objects/variables
     	WebDriver driver ;
-    	System.setProperty("webdriver.firefox.marionette","geckodriver");
-    	driver = new FirefoxDriver();
-        String baseUrl = "http://fd-dvops-vm-01.eastus.cloudapp.azure.com:50000/hello-world-war-1.0.0/";
-        String expectedTitle = "License - Liferay DXP";
+    	System.out.println("launching chrome browser");
+		System.setProperty("webdriver.chrome.driver", driverPath+"chromedriver.exe");
+  
+    	driver = new ChromeDriver();
+    	driver.navigate().to("http://google.com");
+        String baseUrl = "http://google.com/";
+        String expectedTitle = "Google";
         String actualTitle = "";
 
         // launch Fire fox and direct it to the Base URL
